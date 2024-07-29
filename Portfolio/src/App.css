@@ -1,0 +1,242 @@
+:root {
+  --background-color: #FFFFFF;
+  --btn-color: #333333;
+  --btn-text-color: #fff;
+  --project-card-bg: #F0F0F0;
+  --text-color: #000000;
+  --form-text-color: #555;
+  --footer-text-color: #888;
+  --border-color: #1d0e0e;
+  --neon-color: rgba(58, 196, 255, 0.9);
+  --neon-color-light: rgba(58, 196, 255, 0.6);
+  --neon-color-lighter: rgba(58, 196, 255, 0.4);
+}
+
+[data-theme='dark'] {
+  --background-color: #121212;
+  --btn-color: #333333;
+  --btn-text-color: #FFFFFF;
+  --project-card-bg: #1C1C1C;
+  --text-color: #fff;
+  --form-text-color: #fff;
+  --footer-text-color: #bbb;
+  --border-color: #979797;
+  --neon-color: rgba(255, 1, 35, 0.9);
+  --neon-color-light: rgba(255, 74, 58, 0.6);
+  --neon-color-lighter: rgba(255, 58, 58, 0.4);
+}
+
+body {
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 60px;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+}
+
+h2, h3, p {
+  font-family: 'Roboto Mono', monospace;
+}
+
+h2 {
+  text-transform: uppercase;
+}
+
+h2, h3 {
+  font-size: 18px;
+}
+
+h1 {
+  font-family: "Rubik";
+  font-weight: 900;
+  font-size: 30px;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.sectionTitle {
+  margin-bottom: 30px;
+}
+
+.hover {
+  cursor: pointer;
+}
+
+@media (min-width: 800px) {
+  #root {
+    gap: 100px;
+  }
+  h1 {
+    font-size: 40px;
+  }
+  h2, h3 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 20px;
+  }
+  .sectionTitle {
+    margin-bottom: 60px;
+  }
+}
+
+@media (min-width: 1400px) {
+  #root {
+    gap: 200px;
+  }
+  h1 {
+    font-size: 48px;
+  }
+  .sectionTitle {
+    margin-bottom: 75px;
+  }
+}
+
+/* Additional styles for elements */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  text-align: center;
+  height: 100vh; /* Changed from 100dvh to 100vh */
+}
+
+.hero {
+  max-width: 200px;
+  align-self: center;
+  background-color: var(--project-card-bg);
+  border-radius: 20px;
+  /* Neon glow effect using CSS variables */
+  filter: drop-shadow(0 0 10px var(--neon-color)) 
+          drop-shadow(0 0 20px var(--neon-color-light)) 
+          drop-shadow(0 0 30px var(--neon-color-lighter));
+  -webkit-filter: drop-shadow(0 0 10px var(--neon-color)) 
+                  drop-shadow(0 0 20px var(--neon-color-light)) 
+                  drop-shadow(0 0 30px var(--neon-color-lighter));
+}
+
+.colorModeContainer {
+  position: relative;
+}
+
+.colorMode {
+  position: absolute;
+  right: 0;
+  width: 25px;
+  transition: transform 0.3s, filter 0.3s, -webkit-filter 0.3s;
+}
+
+.colorMode:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2); /* WebKit transform */
+  filter: drop-shadow(0 0px 1px rgb(250, 213, 4));
+  -webkit-filter: drop-shadow(0 0px 1px rgb(250, 213, 4)); /* WebKit filter */
+}
+
+.info span {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.info a {
+  margin: 5px;
+  width: fit-content;
+  align-self: center;
+}
+
+.info span a img {
+  width: 30px;
+  transition: transform 0.3s, filter 0.3s, -webkit-filter 0.3s;
+}
+
+.info span a img:hover {
+  transform: scale(1.07);
+  -webkit-transform: scale(1.07); /* WebKit transform */
+  filter: drop-shadow(0 4px 3px rgba(4, 193, 250, 0.2));
+  -webkit-filter: drop-shadow(0 4px 3px rgba(4, 193, 250, 0.2)); /* WebKit filter */
+}
+
+button {
+  background-color: var(--btn-color);
+  border: none;
+  border-radius: 20px;
+  width: 126px;
+  height: 50px;
+  color: var(--btn-text-color);
+  font-size: 20px;
+  margin-top: 15px;
+  font-weight: bold;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 300ms ease-in-out, transform 400ms ease-in-out;
+  -webkit-transition: -webkit-box-shadow 300ms ease-in-out, -webkit-transform 400ms ease-in-out; /* WebKit transition */
+}
+
+button:hover {
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05); /* WebKit transform */
+  background-color: rgb(255, 12, 12);
+  color: rgb(240, 240, 240);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4); /* WebKit box-shadow */
+  filter: drop-shadow(0 0 3px rgb(21, 54, 62));
+  -webkit-filter: drop-shadow(0 0 3px rgb(21, 54, 62)); /* WebKit filter */
+}
+
+button:active {
+  transform: translateY(2px);
+  -webkit-transform: translateY(2px); /* WebKit transform */
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4); /* WebKit box-shadow */
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+}
+
+.description {
+  max-width: 35ch;
+  font-weight: 400;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+}
+
+@media (min-width: 800px) {
+  .container {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .hero {
+    max-width: 350px;
+    width: 350px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .hero {
+    max-width: 400px;
+    width: 400px;
+  }
+}

@@ -1,0 +1,150 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  text-align: center;
+  height: 100vh; /* Changed from 100dvh to 100vh */
+}
+
+.hero {
+  
+  }
+
+.colorModeContainer {
+  position: relative;
+}
+
+.colorMode {
+  position: absolute;
+  right: 0;
+  width: 25px;
+  transition: transform 0.3s, filter 0.3s, -webkit-filter 0.3s;
+}
+.hero {
+  /* Ensure you import or include this style in your component */
+  max-width: 200px;
+  align-self: center;
+  
+  border-radius: 20px;
+  /* Neon glow effect using CSS variables */
+  filter: drop-shadow(0 0 10px var(--neon-color)) 
+          drop-shadow(0 0 20px var(--neon-color-light)) 
+          drop-shadow(0 0 30px var(--neon-color-lighter));
+  -webkit-filter: drop-shadow(0 0 10px var(--neon-color)) 
+                  drop-shadow(0 0 20px var(--neon-color-light)) 
+                  drop-shadow(0 0 30px var(--neon-color-lighter));
+}
+
+@media (min-width: 800px) {
+  .hero {
+    max-width: 350px;
+    width: 350px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .hero {
+    max-width: 400px;
+    width: 400px;
+  }
+}
+
+.colorMode:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2); /* WebKit transform */
+  filter: drop-shadow(0 0px 1px rgb(250, 213, 4));
+  -webkit-filter: drop-shadow(0 0px 1px rgb(250, 213, 4)); /* WebKit filter */
+}
+
+.info span {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.info a {
+  margin: 5px;
+  width: fit-content;
+  align-self: center;
+}
+
+.info span a img {
+  width: 30px;
+  transition: transform 0.3s, filter 0.3s, -webkit-filter 0.3s;
+}
+
+.info span a img:hover {
+  transform: scale(1.07);
+  -webkit-transform: scale(1.07); /* WebKit transform */
+  filter: drop-shadow(0 4px 3px rgba(4, 193, 250, 0.2));
+  -webkit-filter: drop-shadow(0 4px 3px rgba(4, 193, 250, 0.2)); /* WebKit filter */
+}
+
+button {
+  background-color: var(--btn-color);
+  border: none;
+  border-radius: 20px;
+  width: 126px;
+  height: 50px;
+  color: var(--btn-text-color);
+  font-size: 20px;
+  margin-top: 15px;
+  font-weight: bold;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 300ms ease-in-out, transform 400ms ease-in-out;
+  -webkit-transition: -webkit-box-shadow 300ms ease-in-out, -webkit-transform 400ms ease-in-out; /* WebKit transition */
+}
+
+button:hover {
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05); /* WebKit transform */
+  background-color: rgb(255, 12, 12);
+  color: rgb(240, 240, 240);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4); /* WebKit box-shadow */
+  filter: drop-shadow(0 0 3px rgb(21, 54, 62));
+  -webkit-filter: drop-shadow(0 0 3px rgb(21, 54, 62)); /* WebKit filter */
+}
+
+button:active {
+  transform: translateY(2px);
+  -webkit-transform: translateY(2px); /* WebKit transform */
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4); /* WebKit box-shadow */
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+}
+
+.description {
+  max-width: 35ch;
+  font-weight: 400;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+}
+
+@media (min-width: 800px) {
+  .container {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .hero {
+    max-width: 350px;
+    width: 350px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .hero {
+    max-width: 400px;
+    width: 400px;
+  }
+}
